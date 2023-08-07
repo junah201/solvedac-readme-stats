@@ -130,3 +130,13 @@ def get_tier_info(tier: str) -> TierInfo:
     """Get tier info"""
 
     return tier_info_table.get(tier, None)
+
+
+def performance_to_tier(performance: int) -> TierInfo:
+    """Get performance to tier info"""
+
+    for tier in tier_info_table.values():
+        if tier.min_rating <= performance <= tier.max_rating:
+            return tier
+
+    return None

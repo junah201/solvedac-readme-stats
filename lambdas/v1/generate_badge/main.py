@@ -31,6 +31,10 @@ def lambda_handler(event, context):
     tier_info = utils.get_tier_info(tier_text)
 
     max_tier_text = utils.arena_tier_to_text(user.arena_max_tier)
+    performance_text = utils.performance_to_tier(
+        user.arena_recent_performance
+    )
+
     percentage = (user.arena_rating - tier_info.min_rating) / \
         (tier_info.max_rating - tier_info.min_rating) * 300 + 25
 
@@ -183,7 +187,7 @@ def lambda_handler(event, context):
         rating=f"{user.arena_rating}",
         max_rating=f"{max_tier_text} {user.arena_max_rating}",
         next_rating=tier_info.max_rating,
-        performance=user.arena_recent_performance,
+        performance=f"{performance_text.tier} {user.arena_recent_performance}",
         matches=user.arena_match_count,
         color=tier_info.color,
         percentage=percentage,
