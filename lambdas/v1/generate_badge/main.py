@@ -1,4 +1,5 @@
 import utils
+import fonts
 
 
 def lambda_handler(event, context):
@@ -46,8 +47,16 @@ def lambda_handler(event, context):
     xml:space="preserve"
 >
     <style type="text/css">
-        @import url('https://fonts.googleapis.com/css2?family=Inter');
-
+        @font-face {{
+            font-family: 'Inter';
+            font-weight: regular;
+            src: url(data:font/ttf;charset=utf-8;base64,{inter_font_regular});
+        }}
+        @font-face {{
+            font-family: 'Inter';
+            font-weight: bold;
+            src: url(data:font/ttf;charset=utf-8;base64,{inter_font_bold});
+        }}
         @keyframes delayFadeIn {{
             0%{{
                 opacity:0
@@ -177,7 +186,9 @@ def lambda_handler(event, context):
         performance=user.arena_recent_performance,
         matches=user.arena_match_count,
         color=tier_info.color,
-        percentage=percentage
+        percentage=percentage,
+        inter_font_regular=fonts.regular,
+        inter_font_bold=fonts.bold
     )
 
     return {
