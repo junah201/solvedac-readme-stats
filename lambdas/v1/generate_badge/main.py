@@ -120,36 +120,20 @@ def lambda_handler(event, context):
     </style>
     <rect width="350" height="170" fill="{color}" rx = "6"/>
     <g>
-        <text x="25" y="44" fill="#ffffff" class = "username">
-            {username}
-        </text>
-        <text x="325" y="55"  fill="#F6F6DB" text-anchor="end" class = "tier">
-            {tier}
-        </text>
+        <text x="25" y="44" fill="#ffffff" class = "username">{username}</text>
+        <text x="325" y="55"  fill="#F6F6DB" text-anchor="end" class = "tier">{tier}</text>
     </g>
     <g>
-        <text x="25" y="76" fill="#ffffff" class = "info">
-            Rating
-        </text>
-        <text x="125" y="76" fill="#ffffff" class = "info-value">
-            {tier} {rating} (max: {max_rating})
-        </text>
+        <text x="25" y="76" fill="#ffffff" class = "info">Rating</text>
+        <text x="125" y="76" fill="#ffffff" class = "info-value">{tier} {rating} (max: {max_rating})</text>
     </g>
     <g>
-        <text x="25" y="93" fill="#ffffff" class = "info">
-            Performance
-        </text>
-        <text x="125" y="93" fill="#ffffff" class = "info-value">
-            {performance}
-        </text>
+        <text x="25" y="93" fill="#ffffff" class = "info">Performance</text>
+        <text x="125" y="93" fill="#ffffff" class = "info-value">{performance}</text>
     </g>
     <g>
-        <text x="25" y="110" fill="#ffffff" class = "info">
-            Matches
-        </text>
-        <text x="125" y="110" fill="#ffffff" class = "info-value">
-            {matches}
-        </text>
+        <text x="25" y="110" fill="#ffffff" class = "info">Matches</text>
+        <text x="125" y="110" fill="#ffffff" class = "info-value">{matches}</text>
     </g>
     <g>
         <line x1="25" y1="133" x2="325" y2="133" class="rate-bar-container"/>
@@ -158,9 +142,7 @@ def lambda_handler(event, context):
         <line x1="25" y1="133" x2="{percentage}" y2="133" class="rate-bar"/>
     </g>
     <g>
-        <text x="325" y="147" text-anchor="end" fill="#ffffff" class = "detail">
-            {rating} / {next_rating}
-        </text>
+        <text x="325" y="147" text-anchor="end" fill="#ffffff" class = "detail">{rating} / {next_rating}</text>
     </g>
 </svg>
     '''.format(
