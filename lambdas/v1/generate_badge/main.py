@@ -1,5 +1,4 @@
 import utils
-import fonts
 
 
 def lambda_handler(event, context):
@@ -51,16 +50,6 @@ def lambda_handler(event, context):
     xml:space="preserve"
 >
     <style type="text/css">
-        @font-face {{
-            font-family: 'Inter';
-            font-weight: regular;
-            src: url(data:font/ttf;charset=utf-8;base64,{inter_font_regular});
-        }}
-        @font-face {{
-            font-family: 'Inter';
-            font-weight: bold;
-            src: url(data:font/ttf;charset=utf-8;base64,{inter_font_bold});
-        }}
         @keyframes delayFadeIn {{
             0%{{
                 opacity:0
@@ -93,31 +82,24 @@ def lambda_handler(event, context):
         }}
 
         .username {{
-            font-family: 'Inter', sans-serif;
-            font-size: 24px;
-            font-weight: bold;
+            font: 700 24px 'Segoe UI', Ubuntu, Sans-Serif;
             animation: fadeIn 0.8s ease-in-out forwards;
         }}
         .tier {{
-            font-family: 'Inter', sans-serif;
-            font-size: 40px;
-            font-weight: bold;
+            font: 700 40px 'Segoe UI', Ubuntu, Sans-Serif;
             fill : rgba(255, 255, 255, 0.75);
             animation: fadeIn 0.8s ease-in-out forwards;
         }}
         .info {{
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
+            font: 400 14px 'Segoe UI', Ubuntu, Sans-Serif;
             animation: delayFadeIn 1s ease-in-out forwards;
         }}
         .info-value {{
-            font-family: 'Inter', sans-serif;
-            font-size: 12px;
+            font: 400 14px 'Segoe UI', Ubuntu, Sans-Serif;
             animation: delayFadeIn 1s ease-in-out forwards;
         }}
         .detail {{
-            font-family: 'Inter', sans-serif;
-            font-size: 10px;
+            font: 400 10px 'Segoe UI', Ubuntu, Sans-Serif;
             animation: delayFadeIn 1s ease-in-out forwards;
         }}
         .rate-bar {{
@@ -191,8 +173,6 @@ def lambda_handler(event, context):
         matches=user.arena_match_count,
         color=tier_info.color,
         percentage=percentage,
-        inter_font_regular=fonts.regular,
-        inter_font_bold=fonts.bold
     )
 
     return {
