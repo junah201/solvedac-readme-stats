@@ -26,7 +26,7 @@ using html
 
 ```html
 <a href="https://solved.ac/profile/your_handle/arena" target="_blank">
-	<img src="https://solvedac.junah.dev/v1/generate_badge?name=your_handle" />
+	<img src="https://solvedac.junah.dev/v1/generate_badge?handle=your_handle" />
 </a>
 ```
 
